@@ -1,0 +1,8 @@
+This is the Python script I wrote to fix the files. It reads the file in and checks for the first characters in each line. If they are wrong it discards them. It goes through all the txt files in the directory. 
+
+To run: 1. Change the path to the directory the files are. 
+	1.1 You may need to install python package binascii.	
+	2. Can be run on terminal 
+		python HexEdit.py
+	
+

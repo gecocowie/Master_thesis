@@ -1,14 +1,19 @@
 %% Clear and Close Figure
-%clear all
-%close all
+clear all
+close all
 
 %addpath('C:\Users\Tuhtan\OneDrive - TTU\MATLAB\dependencies'); % dependency: sort_nat.m creates list of files in a specified folder.
 %filePath = '/home/laura/Documents/TalTechRobotics/TestIMUGlacier'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Drifter_Tube_SmallSensor12032020/Tube/B85/'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Glaciers_Tracking/Data_Sets/Glaciers/Data/Supraglacial/Supraglacial_All0702/txt_files_run_new/'
-filePath = '/Users/georgecowie/Documents/Master/Masteroppgave/Master_thesis/MatLab/'
+filePath = '/Users/georgecowie/Documents/Master/Masteroppgave/Master_thesis/MatLab/';
 
-fileNameTxt = '/B14/B140818162018.txt'; %r_B630630201247 r_B630630203630
+%fileNameTxt = 'B13/r_B130818151711.txt'; %r_B630630201247 r_B630630203630
+%fileNameTxt = 'B14/B140818162018.txt';
+%fileNameTxt ='B80/A8_A1/B800818151707.txt';%not working
+%fileNameTxt ='B13/A6_A1/B130818145050.txt';%not working
+fileNameTxt = 'B56/B560818162851.txt';
+
 fileFull = fullfile(filePath,fileNameTxt);
 
 % contents = cellstr(ls(filePath));
@@ -409,9 +414,9 @@ else
 end
 %%
 
-%close all
+close all
 clear dataExport
 
 % end % loop over all files in current folder
 
-%fclose('all');
+fclose('all');
