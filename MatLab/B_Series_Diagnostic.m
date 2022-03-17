@@ -1,4 +1,116 @@
 %% Clear and Close Figure
+clear all
+close all
+file_list = [
+"B740818014839.txt"
+"B740818134809.txt"
+"B740818143003.txt"
+"B740818145120.txt"
+"B740818151658.txt"
+"B740818153745.txt"
+"B740818155126.txt"
+"B740818161829.txt"
+"B740818171835.txt"
+"B740818173622.txt"
+"B740818183906.txt"
+"B750818014720.txt"
+"B750818134821.txt"
+"B750818142346.txt"
+"B750818144132.txt"
+"B750818151704.txt"
+"B750818152813.txt"
+"B750818160007.txt"
+"B750818161826.txt"
+"B750818174827.txt"
+"B750818183941.txt"
+"B780818014819.txt"
+"B780818015117.txt"
+"B780818143013.txt"
+"B780818145129.txt"
+"B780818150905.txt"
+"B780818152816.txt"
+"B780818160012.txt"
+"B780818162912.txt"
+"B780818174833.txt"
+"B780818184018.txt"
+"B790818014838.txt"
+"B790818015127.txt"
+"B790818134839.txt"
+"B790818142403.txt"
+"B790818144150.txt"
+"B790818150923.txt"
+"B790818152828.txt"
+"B790818155150.txt"
+"B790818161851.txt"
+"B800818014722.txt"
+"B800818134833.txt"
+"B800818142400.txt"
+"B800818144146.txt"
+"B800818151707.txt"
+"B800818153749.txt"
+"B800818155147.txt"
+"B800818161843.txt"
+"B800818171840.txt"
+"B800818173629.txt"
+"B800818174614.txt"
+"B800818185927.txt"
+"B820818004840.txt"
+"B820818133009.txt"
+"B820818134146.txt"
+"B820818140909.txt"
+"B820818143747.txt"
+"B820818145151.txt"
+"B820818152908.txt"
+"B820818164832.txt"
+"B820818165611.txt"
+"B830818014718.txt"
+"B830818015119.txt"
+"B830818134842.txt"
+"B830818143022.txt"
+"B830818145135.txt"
+"B830818150926.txt"
+"B830818153759.txt"
+"B830818155203.txt"
+"B830818161850.txt"
+"B830818174844.txt"
+"B830818184200.txt"
+"B840818014735.txt"
+"B840818015102.txt"
+"B840818134834.txt"
+"B840818145123.txt"
+"B840818151701.txt"
+"B840818152805.txt"
+"B840818155159.txt"
+"B840818162908.txt"
+"B840818171835.txt"
+"B840818173633.txt"
+"B840818185919.txt"
+"B850818014731.txt"
+"B850818015116.txt"
+"B850818142411.txt"
+"B850818144158.txt"
+"B850818151721.txt"
+"B850818152823.txt"
+"B850818155219.txt"
+"B850818162932.txt"
+"B850818171902.txt"
+"B850818173653.txt"
+"B850818185936.txt"
+"B860818014702.txt"
+"B860818134827.txt"
+"B860818142349.txt"
+"B860818144137.txt"
+"B860818151701.txt"
+"B860818152800.txt"
+"B860818155949.txt"
+"B860818161826.txt"
+"B860818174821.txt"
+"B860818184147.txt"
+];
+
+for i=1:length(file_list)
+
+%% Clear and Close Figure
 %clear all
 %close all
 
@@ -6,8 +118,8 @@
 %filePath = '/home/laura/Documents/TalTechRobotics/TestIMUGlacier'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Drifter_Tube_SmallSensor12032020/Tube/B85/'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Glaciers_Tracking/Data_Sets/Glaciers/Data/Supraglacial/Supraglacial_All0702/txt_files_run_new/'
-filePath = "B80/A8_A1"
-fileNameTxt = 'B800818151707.txt'; %r_B630630201247 r_B630630203630
+filePath = "/Users/georgecowie/Documents/Master/Masteroppgave/Master_thesis/MatLab/All_deployments18082020/All_csv_files_18082020/";
+fileNameTxt = file_list{i}%'B800818151707.txt'; %r_B630630201247 r_B630630203630
 fileFull = fullfile(filePath,fileNameTxt);
 
 % contents = cellstr(ls(filePath));
@@ -256,13 +368,13 @@ dlmwrite(exportFile,dataExport,'-append');
 %%
 
 %% STEP 5: Export .mat file
-exportMatFile = strcat(filePath,'\',fileNameNoExt,'.mat');
-if sampleRate == 100 % if 100 Hz
-save(exportMatFile,'ts','P1','T1','P2','T2','P3','T3','eul_head','eul_roll','eul_pitch','quat_x','quat_y','quat_z','quat_w','mag_x','mag_y','mag_z','acc_x','acc_y','acc_z','gyro_x','gyro_y','gyro_z','cal_mag','cal_acc','cal_gyro','cal_imu');
-elseif sampleRate == 250 % if 250 Hz
-save(exportMatFile,'ts','P1','T1','P2','T2','P3','T3','acc_x','acc_y','acc_z','gyro_x','gyro_y','gyro_z','cal_mag','cal_acc','cal_gyro','cal_imu');    
-else
-end
+%exportMatFile = strcat(filePath,'\',fileNameNoExt,'.mat');
+%if sampleRate == 100 % if 100 Hz
+%save(exportMatFile,'ts','P1','T1','P2','T2','P3','T3','eul_head','eul_roll','eul_pitch','quat_x','quat_y','quat_z','quat_w','mag_x','mag_y','mag_z','acc_x','acc_y','acc_z','gyro_x','gyro_y','gyro_z','cal_mag','cal_acc','cal_gyro','cal_imu');
+%elseif sampleRate == 250 % if 250 Hz
+%save(exportMatFile,'ts','P1','T1','P2','T2','P3','T3','acc_x','acc_y','acc_z','gyro_x','gyro_y','gyro_z','cal_mag','cal_acc','cal_gyro','cal_imu');    
+%else
+%end
 %%
 
 %% Figures
@@ -275,25 +387,25 @@ right_color = [1 0 1];
 set(fig1,'defaultAxesColorOrder',[left_color; right_color]);
 
 yyaxis right
-subplot(3,1,1)
+%subplot(3,1,1)
 % plot(ts,sqrt(acc_x.^2 + acc_y.^2 + acc_z.^2) ,'m','LineWidth',1);
 % ylabel('Acceleration Magnitude (m/s�)');
 % yyaxis left
 
-plot(ts,P1,'-r','LineWidth',figLineWidth);
-ax = gca;
-hold on
-plot(ts,P2,'-b','LineWidth',figLineWidth);
-plot(ts,P3,'-k','LineWidth',figLineWidth);
-legend('Left','Center','Right');
-ylabel('Total Pressure (mbar)')
-xlabel('Time (s)');
+%plot(ts,P1,'-r','LineWidth',figLineWidth);
+%ax = gca;
+%hold on
+%plot(ts,P2,'-b','LineWidth',figLineWidth);
+%plot(ts,P3,'-k','LineWidth',figLineWidth);
+%legend('Left','Center','Right');
+%ylabel('Total Pressure (mbar)')
+%xlabel('Time (s)');
 % xlim([15 60]);
 % ylim([900 1100]);
-ax.XGrid = gridStatus;
-ax.YGrid = gridStatus;
-set(gca,'fontsize',figFontSize)
-title(fileNameTxt);
+%ax.XGrid = gridStatus;
+%ax.YGrid = gridStatus;
+%set(gca,'fontsize',figFontSize)
+%title(fileNameTxt);
 
 % subplot(3,1,2)
 % plot(ts,eul_head,'k','LineWidth',figLineWidth);
@@ -320,20 +432,20 @@ title(fileNameTxt);
 % % xlim([15 60]);
 % set(gca,'fontsize',figFontSize)
 
-subplot(3,1,2)
-plot(ts,(mag_x),'k','LineWidth',figLineWidth);
-ax = gca;
-hold on
-plot(ts,(mag_y),'r','LineWidth',figLineWidth);
-plot(ts,(mag_z),'b','LineWidth',figLineWidth);
+%subplot(3,1,2)
+%plot(ts,(mag_x),'k','LineWidth',figLineWidth);
+%ax = gca;
+%hold on
+%plot(ts,(mag_y),'r','LineWidth',figLineWidth);
+%plot(ts,(mag_z),'b','LineWidth',figLineWidth);
 % legend('Pitch');
-ylabel('Magnetometer (micro T)')
-xlabel('Time (s)');
-ax.XGrid = gridStatus;
-ax.YGrid = gridStatus;
+%ylabel('Magnetometer (micro T)')
+%xlabel('Time (s)');
+%ax.XGrid = gridStatus;
+%ax.YGrid = gridStatus;
 % ylim([-80 80]);
 % xlim([15 60]);
-set(gca,'fontsize',figFontSize)
+%set(gca,'fontsize',figFontSize)
 
 % subplot(3,1,3)
 % plot(ts,gyro_x .* 180/pi,'k','LineWidth',3);
@@ -362,31 +474,31 @@ set(gca,'fontsize',figFontSize)
 % set(gca,'fontsize',figFontSize)
 
 % Plot linear accel MAGNITUDE
-subplot(3,1,3)
-plot(ts,acc_mag,'r','LineWidth',figLineWidth);
-ax = gca;
-hold on
+%subplot(3,1,3)
+%plot(ts,acc_mag,'r','LineWidth',figLineWidth);
+%ax = gca;
+%hold on
 % plot(ts,abs(eul_pitch),'b','LineWidth',figLineWidth);
-legend('Acc XYZ');
-ylabel('Accel Mag (m/s^2)')
-xlabel('Time (s)');
-ax.XGrid = gridStatus;
-ax.YGrid = gridStatus;
+%legend('Acc XYZ');
+%ylabel('Accel Mag (m/s^2)')
+%xlabel('Time (s)');
+%ax.XGrid = gridStatus;
+%ax.YGrid = gridStatus;
 % xlim([15 60]);
-set(gca,'fontsize',figFontSize)
+%set(gca,'fontsize',figFontSize)
 
 % subplot(3,1,3)
 % tubespectro % separate script for plotting spectrogram
 
 %% Export current figure as image
-figName = erase(fileNameTxt,'.txt');
-figureExport = strcat(filePath,figName,'.pdf');
+%figName = erase(fileNameTxt,'.txt');
+%figureExport = strcat(filePath,figName,'.pdf');
 % saveas(gcf,figureExport);
 % print(figureExport,'-dpdf','-fillpage')
 % orient(fig1,'landscape')
-print(fig1,figureExport,'-dpdf','-bestfit')
+%print(fig1,figureExport,'-dpdf','-bestfit')
 
-pause(1)
+%pause(1)
 
 %% Create output for dead reckoning
 deadReckCSV = 0;
@@ -410,7 +522,10 @@ end
 
 close all
 clear dataExport
+%% Clear and Close Figure
+close all
 
 % end % loop over all files in current folder
 
 fclose('all');
+end
