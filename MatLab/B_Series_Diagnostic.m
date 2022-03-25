@@ -2,7 +2,37 @@
 clear all
 close all
 file_list = [
-"B840608200152.txt"
+"B080815185830.txt"
+"B080815201322.txt"
+"B080815205152.txt"
+"B080815215122.txt"
+"B100815133047.txt"
+"B100815190033.txt"
+"B100815190650.txt"
+"B100815201315.txt"
+"B100815205135.txt"
+"B100815210659.txt"
+"B100815210723.txt"
+"B100815210749.txt"
+"B100815215110.txt"
+"B170815190312.txt"
+"B170815201430.txt"
+"B170815205235.txt"
+"B170815215144.txt"
+"B330815191035.txt"
+"B330815201357.txt"
+"B680815185647.txt"
+"B680815190017.txt"
+"B680815201348.txt"
+"B680815205133.txt"
+"B830815190811.txt"
+"B830815201405.txt"
+"B830815205120.txt"
+"B830815215113.txt"
+"B840815131334.txt"
+"B840815190427.txt"
+"B840815201357.txt"
+"B840815205106.txt"
 ];
 
 for i=1:length(file_list)
@@ -15,7 +45,7 @@ for i=1:length(file_list)
 %filePath = '/home/laura/Documents/TalTechRobotics/TestIMUGlacier'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Drifter_Tube_SmallSensor12032020/Tube/B85/'; % FOLDER WHERE B-SERIES FILES ARE LOCATED
 %filePath = '/home/laura/Documents/TalTechRobotics/Glaciers_Tracking/Data_Sets/Glaciers/Data/Supraglacial/Supraglacial_All0702/txt_files_run_new/'
-filePath = "/Users/georgecowie/Documents/Master/Masteroppgave/data/Drifters/Kongsvegen_cave/08062021/";
+filePath = "/Users/georgecowie/Documents/Master/Masteroppgave/data/2020/all_deployments_15082020/";
 fileNameTxt = file_list{i}%'B800818151707.txt'; %r_B630630201247 r_B630630203630
 fileFull = fullfile(filePath,fileNameTxt);
 
